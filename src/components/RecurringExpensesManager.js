@@ -115,7 +115,19 @@ const RecurringExpensesManager = ({ recurringExpenses, onAddRecurringExpense, on
         <TrendingUp className="w-5 h-5 text-red-600" /> Gastos Recurrentes
       </h3>
       <motion.button
-        onClick={() => { setShowExpenseForm(!showExpenseForm); resetExpenseForm(); }}
+        onClick={() => {
+          if (!showExpenseForm) {
+            setShowExpenseForm(true);
+            setEditingExpense(null);
+            setExpenseName('');
+            setExpenseAmount('');
+            setExpenseFrequency('monthly');
+            setExpenseNextDueDate(new Date().toISOString().split('T')[0]);
+          } else {
+            setShowExpenseForm(false);
+            setEditingExpense(null);
+          }
+        }}
         className="mb-6 px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 bg-red-500 text-white shadow-lg hover:shadow-xl hover:scale-105"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
@@ -263,7 +275,19 @@ const RecurringExpensesManager = ({ recurringExpenses, onAddRecurringExpense, on
         <TrendingUp className="w-5 h-5 text-green-600" /> Ingresos Recurrentes
       </h3>
       <motion.button
-        onClick={() => { setShowIncomeForm(!showIncomeForm); resetIncomeForm(); }}
+        onClick={() => {
+          if (!showIncomeForm) {
+            setShowIncomeForm(true);
+            setEditingIncome(null);
+            setIncomeName('');
+            setIncomeAmount('');
+            setIncomeFrequency('monthly');
+            setIncomeNextDueDate(new Date().toISOString().split('T')[0]);
+          } else {
+            setShowIncomeForm(false);
+            setEditingIncome(null);
+          }
+        }}
         className="mb-6 px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 bg-green-500 text-white shadow-lg hover:shadow-xl hover:scale-105"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}

@@ -59,7 +59,18 @@ const SalaryManager = ({ salaries, onAddSalary, onUpdateSalary, onDeleteSalary }
       </h2>
 
       <motion.button
-        onClick={() => { setShowForm(!showForm); resetForm(); }}
+        onClick={() => {
+          if (!showForm) {
+            setShowForm(true);
+            setEditingSalary(null);
+            setAmount('');
+            setDate(new Date().toISOString().split('T')[0]);
+            setNotes('');
+          } else {
+            setShowForm(false);
+            setEditingSalary(null);
+          }
+        }}
         className="mb-6 px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 bg-green-500 text-white shadow-lg hover:shadow-xl hover:scale-105"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}

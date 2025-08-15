@@ -1,1 +1,54 @@
-node_modules
+# Dependencias
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+.pnpm-debug.log
+
+# Archivos de lock (opcional: normalmente SÍ se suben, pero depende del equipo)
+# Descomenta la siguiente línea solo si NO quieres subir package-lock.json
+# package-lock.json
+
+# Entornos
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build
+/dist
+/build
+/out
+/.next
+/nuxt
+/.nuxt
+
+# Logs
+logs
+*.log
+
+# Cobertura de pruebas
+coverage/
+.nyc_output
+
+# IDE y editores
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.DS_Store
+
+# Sistema
+Thumbs.db
+.DS_Store
+
+# Archivos temporales del sistema
+*.tmp
+*~
+
+# Documentación generada
+docs/_build/
